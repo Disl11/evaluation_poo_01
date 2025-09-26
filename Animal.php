@@ -7,6 +7,8 @@ class Animal
     public string $espece;
     public string $regime;
 
+    public bool $donneNaissance = false;
+
     public function __construct(string $nom = "inconue", string $espece = "inconue", string $regime = "inconue")
     {
         $this->nom = $nom;
@@ -22,5 +24,12 @@ class Animal
             " qui s'appelle " . $this->nom . "<br>";
     }
 
-    public function DonnerNaissance() {}
+    public function donnerNaissance()
+    {
+        if ($this->donneNaissance) {
+            return $this->nom . " a donner naissance <br>";
+        } else {
+            return $this->nom . " a pas donner naissance <br>";
+        }
+    }
 }
