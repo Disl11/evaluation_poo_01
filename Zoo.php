@@ -3,22 +3,32 @@
 class Zoo
 {
     public array $visiteur = [];
+    public array $animaux = [];
 
     public function venteBillet(Visiteur $visiteur)
     {
         $visiteur->aBillet = true;
         $this->visiteur[] = $visiteur;
     }
-    public function livraison() {}
-    public function naissance() {}
 
-    public function ouvirLesPorte(Visiteur $visiteur)
+    public function ouvirLesPorte()
     {
 
-        if ($visiteur->aBillet) {
-            return $visiteur->nom . " peu entre dans le zoo <br>";
-        } else {
-            return $visiteur->nom . " peu pas entree dans le zoo <br>";
+        $ouvrirZoo = "Ouverture du zoo ! <br>";
+
+        foreach ($this->visiteur as $visiteur) {
+
+            if ($visiteur->aBillet) {
+
+                foreach ($this->animaux as $animal) {
+                    $ouvrirZoo .= $animal->faireLeShow();
+                }
+
+                $ouvrirZoo .= $visiteur->nom . " peu entre dans le zoo <br>";
+            } else {
+                $ouvrirZoo .= $visiteur->nom . " peu pas entree dans le zoo <br>";
+            }
         }
+        return $ouvrirZoo;
     }
 }

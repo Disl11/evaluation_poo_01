@@ -2,21 +2,29 @@
 require_once "Animal.php";
 require_once "Visiteur.php";
 require_once "Carnivor.php";
+require_once "Herbivor.php";
 require_once  "Zoo.php";
-
-$animal1 = new Carnivor("rexy", "lion");
-echo $animal1->faireLeShow();
-
-echo $animal1->donnerNaissance();
-
-
-$visiteur1 = new Visiteur("Loic");
-echo $visiteur1->afficherVisiteur();
-
-
 
 $zoo = new Zoo();
 
-echo $zoo->ouvirLesPorte($visiteur1);
-$zoo->venteBillet($visiteur1);
-echo $zoo->ouvirLesPorte($visiteur1);
+
+
+$zoo->animaux[] = new Carnivor("Rexy", "lion");
+$zoo->animaux[] = new Herbivor("Bambi", "cerf");
+
+
+$visiteur1 = new Visiteur("Loic");
+$visiteur2 = new Visiteur("Yassine");
+$visiteur3 = new Visiteur("Enzo");
+$visiteur4 = new Visiteur("Pierre");
+$visiteur5 = new Visiteur("Yannick");
+
+
+//vente billet
+echo $zoo->venteBillet($visiteur1);
+echo $zoo->venteBillet($visiteur2);
+echo $zoo->venteBillet($visiteur3);
+
+
+
+echo $zoo->ouvirLesPorte();

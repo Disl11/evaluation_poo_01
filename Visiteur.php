@@ -7,7 +7,7 @@ class Visiteur
     public bool $aBillet = false;
 
 
-    public function __construct(string $nom = "incconue")
+    public function __construct(string $nom = "incconu")
     {
         $this->nom = $nom;
     }

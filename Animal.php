@@ -21,7 +21,7 @@ class Animal
     {
         return "Cet animal " . $this->regime .
             " qui est un  " . $this->espece .
-            " qui s'appelle " . $this->nom . "<br>";
+            " qui s'appelle " . $this->nom . " fait  le show <br>";
     }
 
     public function donnerNaissance()
