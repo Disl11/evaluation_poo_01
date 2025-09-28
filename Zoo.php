@@ -11,6 +11,9 @@ class Zoo
         $this->visiteur[] = $visiteur;
     }
 
+
+    public function livraison() {}
+
     public function ouvirLesPorte()
     {
 
