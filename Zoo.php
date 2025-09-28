@@ -20,15 +20,15 @@ class Zoo
 
             if ($visiteur->aBillet) {
 
+                $ouvrirZoo .= $visiteur->nom . " peu entre dans le zoo <br>";
+
                 foreach ($this->animaux as $animal) {
                     $ouvrirZoo .= $animal->faireLeShow();
                 }
-
-                $ouvrirZoo .= $visiteur->nom . " peu entre dans le zoo <br>";
             } else {
                 $ouvrirZoo .= $visiteur->nom . " peu pas entree dans le zoo <br>";
             }
         }
-        return $ouvrirZoo;
+        return $ouvrirZoo . "Fermeture du zoo";
     }
 }
